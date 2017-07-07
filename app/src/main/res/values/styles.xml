@@ -26,12 +26,12 @@
     <style name="DescriptionTextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
-        <item name="android:layout_marginRight">8dp</item>
-        <item name="android:drawablePadding">8dp</item>
+        <item name="android:layout_marginBottom">@dimen/description_text_view_layout_marginBottom</item>
+        <item name="android:layout_marginLeft">@dimen/description_text_view_layout_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/description_text_view_layout_marginRight</item>
+        <item name="android:drawablePadding">@dimen/description_text_view_drawablePadding</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">@dimen/description_text_view_textSize</item>
     </style>
 
 </resources>

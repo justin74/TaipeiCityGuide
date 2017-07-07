@@ -6,13 +6,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 /**
- * Created by apple on 2017/7/3.
+ * Created by justin on 2017/7/3.
  */
 
 public class CategoryAdapter extends FragmentPagerAdapter {
 
-    private static int PAGE_COUNT = 4;
     private Context mContext;
+    private MyApplication application;
 
     public CategoryAdapter(Context context, FragmentManager fm) {
         super(fm);
@@ -21,32 +21,31 @@ public class CategoryAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return PAGE_COUNT;
+        return pages.length;
     }
 
     @Override
     public Fragment getItem(int position) {
-        if (position == 0){
-            return new SightsFragment();
-        } else if (position == 1){
-            return new FoodFragment();
-        } else if (position == 2){
-            return new ShopsFragment();
-        } else {
-            return new InfoFragment();
-        }
+        return pages[position];
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        if (position == 0) {
-            return mContext.getString(R.string.category_sights);
-        } else if (position == 1) {
-            return mContext.getString(R.string.category_food);
-        } else if (position == 2) {
-            return mContext.getString(R.string.category_shop);
-        } else {
-            return mContext.getString(R.string.category_info);
-        }
+        return pageTitle[position];
     }
+
+    private Fragment[] pages = new Fragment[]{
+            new SightsFragment(),
+            new FoodFragment(),
+            new ShopsFragment(),
+            new InfoFragment()
+    };
+
+    private CharSequence[] pageTitle = new CharSequence[]{
+            application.getContext().getString(R.string.category_sights),
+            application.getContext().getString(R.string.category_food),
+            application.getContext().getString(R.string.category_shop),
+            application.getContext().getString(R.string.category_info),
+    };
+
 }
