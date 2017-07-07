@@ -11,12 +11,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class CategoryAdapter extends FragmentPagerAdapter {
 
-    private Context mContext;
     private MyApplication application;
 
-    public CategoryAdapter(Context context, FragmentManager fm) {
+    public CategoryAdapter(FragmentManager fm) {
         super(fm);
-        mContext = context;
     }
 
     @Override
